@@ -52,7 +52,7 @@ module ONIX
       end
     end
 
-    def three_digit
+    def self.three_digit
       lambda do |val|
         if val.nil?
           nil
