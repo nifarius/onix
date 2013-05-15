@@ -12,6 +12,7 @@ module ONIX
     delegate :publishing_status, :publishing_status=
     delegate :publication_date, :publication_date=
     delegate :epub_format, :epub_format=
+    delegate :epub_type, :epub_type=
     delegate :related_product, :related_product=
 
     def measurement_system

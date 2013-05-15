@@ -51,6 +51,22 @@ module ONIX
         end
       end
     end
+
+    def three_digit
+      lambda do |val|
+        if val.nil?
+          nil
+        elsif val.to_i < 10
+          "00#{val}"
+        elsif val.to_i < 100
+          "0#{val}"
+        elsif val.to_i > 999
+          val.to_s[-3,3]
+        else
+          val.to_s
+        end
+      end
+    end
   end
 end
 
