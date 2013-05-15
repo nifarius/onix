@@ -11,6 +11,8 @@ module ONIX
     delegate :bic_main_subject, :bic_main_subject=
     delegate :publishing_status, :publishing_status=
     delegate :publication_date, :publication_date=
+    delegate :epub_format, :epub_format=
+    delegate :related_product, :related_product=
 
     def measurement_system
       @measurement_system ||= :metric
@@ -613,6 +615,16 @@ module ONIX
         product.market_representations << reps
       end
       reps.market_publishing_status = value.to_i
+    end
+
+    def bisac_main_subjects
+      subjects = product.main_subject.select { |sub| sub.main_subject_scheme_identifier.to_i == 10 }
+      subjects.collect { |sub| sub.subject_code}
+    end
+
+    def street_date
+      supply = find_or_create_supply_detail
+      supply.on_sale_date
     end
 
     private

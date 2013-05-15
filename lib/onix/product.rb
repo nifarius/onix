@@ -42,6 +42,11 @@ module ONIX
     xml_accessor :supply_details, :from => "SupplyDetail", :as => [ONIX::SupplyDetail]
     xml_accessor :market_representations, :from => "MarketRepresentation", :as => [ONIX::MarketRepresentation]
 
+    xml_accessor :epub_format, :from => "EpubFormat", :as => Fixnum, :to_xml => ONIX::Formatters.two_digit
+    xml_accessor :related_product,  from: "RelatedProduct", as: ONIX::RelatedProduct
+    xml_accessor :sales_rights,     from: "SalesRights",    as: ONIX::SalesRights
+    xml_accessor :main_subject,     from: "MainSubject",    as: [ONIX::MainSubject]
+
     # some deprecated attributes. Read only
     # - See the measures array for the current way of specifying
     #   various measurements of the product
@@ -58,6 +63,7 @@ module ONIX
       self.contributors = []
       self.websites = []
       self.subjects = []
+      self.main_subject = []
       self.audience_ranges = []
       self.text = []
       self.languages = []
