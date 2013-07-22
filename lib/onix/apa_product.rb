@@ -8,6 +8,7 @@ module ONIX
     delegate :product_form, :product_form=
     delegate :edition, :edition=
     delegate :number_of_pages, :number_of_pages=
+    delegate :pages_arabic, :pages_arabic=
     delegate :bic_main_subject, :bic_main_subject=
     delegate :publishing_status, :publishing_status=
     delegate :publication_date, :publication_date=
