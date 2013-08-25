@@ -629,6 +629,11 @@ module ONIX
       supply.on_sale_date
     end
 
+    def street_date=(value)
+      supply = find_or_create_supply_detail
+      supply.on_sale_date = value
+    end
+
     private
 
     # add a new subject to this product
