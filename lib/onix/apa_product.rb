@@ -14,7 +14,14 @@ module ONIX
     delegate :publication_date, :publication_date=
     delegate :epub_format, :epub_format=
     delegate :epub_type, :epub_type=
-    delegate :related_product, :related_product=
+
+    def related_product
+      product.related_products.first
+    end
+
+    def related_product=(value)
+      product.reated_products = [value]
+    end
 
     def measurement_system
       @measurement_system ||= :metric
