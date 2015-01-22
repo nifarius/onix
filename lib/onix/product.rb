@@ -16,6 +16,7 @@ module ONIX
     xml_accessor :websites, :from => "Website", :as => [ONIX::Website]
     xml_accessor :contributors, :from => "Contributor", :as => [ONIX::Contributor]
     xml_accessor :edition_number, :from => "EditionNumber", :as => Fixnum
+    xml_accessor :edition_statement, from: 'EditionStatement'
     xml_accessor :languages, :from => "Language", :as => [ONIX::Language]
     xml_accessor :number_of_pages, :from => "NumberOfPages", :as => Fixnum
     xml_accessor :pages_arabic, :from => "PagesArabic", :as => Fixnum
