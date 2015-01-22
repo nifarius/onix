@@ -20,7 +20,7 @@ module ONIX
     end
 
     def related_product=(value)
-      product.reated_products = [value]
+      product.related_products = [value]
     end
 
     def measurement_system
